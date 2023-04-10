@@ -45,8 +45,9 @@ export default class SearchForm extends Vue {
   }
 
   async mounted() {
+    console.log(process.env.VUE_APP_GOOGLE_MAPS_API_KEY);
     let loader = new Loader({ 
-      apiKey: process.env.GOOGLE_MAPS_API_KEY,
+      apiKey: process.env.VUE_APP_GOOGLE_MAPS_API_KEY,
       libraries: ["places"] 
     })
     await loader.load();

@@ -55,7 +55,7 @@ export default class MapService {
                 method: 'GET'
               };
           
-              const response = await fetch(process.env.GOOGLE_MAPS_API_ADDRESS_PATH + 'address=' + address.replace(' ', '+') + '&key=' + process.env.GOOGLE_MAPS_API_KEY, requestOptions);
+              const response = await fetch(process.env.VUE_APP_GOOGLE_MAPS_API_ADDRESS_PATH + 'address=' + address.replace(' ', '+') + '&key=' + process.env.VUE_APP_GOOGLE_MAPS_API_KEY, requestOptions);
               const json = await response.json();
               const location: google.maps.LatLng = json.results[0].geometry.location;
               return location;
